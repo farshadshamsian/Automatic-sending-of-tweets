@@ -11,7 +11,7 @@ With the python code that I put, you can easily send your tweets to several diff
 
 2- And then download the latest version of Chrome Driver similar to your Chrome version from the link below and put it in a folder preferably in Driver C
 
-https://www.bing.com/ck/a?!&&p=f4df424bcf146ddfJmltdHM9MTY2Nzg2NTYwMCZpZ3VpZD0wZmU3MmFhYy1hMWJhLTYzZjAtMzBiYS0zODlkYTAzMTYyMTYmaW5zaWQ9NTE4NQ&ptn=3&hsh=3&fclid=0fe72aac-a1ba-63f0-30ba-389da0316216&psq=chrome+driver&u=a1aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw&ntb=1
+https://chromedriver.chromium.org/downloads
 
 
 
