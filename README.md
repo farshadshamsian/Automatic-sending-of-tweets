@@ -2,16 +2,20 @@
 With the python code that I put, you can easily send your tweets to several different accounts without needing time and copying and pasting repeatedly.
 
 
-# First of all, you need to install Selenium Web Driver package
+
+#How to use the code (my suggestion)
 
 
-# And then download the latest version of Chrome Driver similar to your Chrome version from the link below and put it in a folder preferably in Driver C
-"""
+1- First of all, install the pycharm software, which is a very famous Python IDE, and then install the Selenium Web Driver package.
+
+
+2- And then download the latest version of Chrome Driver similar to your Chrome version from the link below and put it in a folder preferably in Driver C
+
 https://www.bing.com/ck/a?!&&p=f4df424bcf146ddfJmltdHM9MTY2Nzg2NTYwMCZpZ3VpZD0wZmU3MmFhYy1hMWJhLTYzZjAtMzBiYS0zODlkYTAzMTYyMTYmaW5zaWQ9NTE4NQ&ptn=3&hsh=3&fclid=0fe72aac-a1ba-63f0-30ba-389da0316216&psq=chrome+driver&u=a1aHR0cHM6Ly9jaHJvbWVkcml2ZXIuY2hyb21pdW0ub3JnL2Rvd25sb2Fkcw&ntb=1
-"""
 
 
-# And enter the required values according to the explanations I put in the code
+
+3- And enter the required values according to the explanations I put in the code
 
 
 
@@ -32,7 +36,7 @@ driver.set_window_position(0, 0)
 driver.set_window_size(1280, 900)   #Set the screen size of the Chrome browser
 number = 1
 
-# email
+-> email
 email = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input')))
 email.clear()
 email.send_keys("")   #Enter the email between double quotes
@@ -40,24 +44,24 @@ email.send_keys("")   #Enter the email between double quotes
 
 
 
-# next_button
+-> next_button
 next_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div')))
 next_button.click()
 
 
-#password
+-> password
 password = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input')))
 password.clear()
-password.send_keys("")  #Enter the password between double quotes
+password.send_keys("")  -> Enter the password between double quotes
 
 
-#login
+-> login
 login_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div')))
 login_button.click()
 
 
 while number < 51:
-	#new_tweet
+	-> new_tweet
 	new_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div')))
 	time.sleep(8)
 	driver.execute_script("arguments[0].click();", new_tweet)
@@ -67,12 +71,12 @@ while number < 51:
 		tweet_text = file.read()
 
 
-	#tweet_text_input
+	-> tweet_text_input
 	tweet_text_input = wait.until(EC.element_to_be_clickable((By.XPATH, '//*                                          [@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div')))
 	tweet_text_input.clear()
 	tweet_text_input.send_keys(f"{tweet_text}")
 	tweet_text_input.send_keys("\n")
-	tweet_text_input.send_keys("")  #Enter the hashtag you want
+	tweet_text_input.send_keys("")  -> Enter the hashtag you want
 
 	time.sleep(10)
 	print(number)
@@ -80,7 +84,7 @@ while number < 51:
 
 
 
-	#submit_tweet
+	-> submit_tweet
 	submit_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]')))
 	time.sleep(8)
 	driver.execute_script("arguments[0].click();", submit_tweet)
