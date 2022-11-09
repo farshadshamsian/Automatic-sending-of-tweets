@@ -19,75 +19,75 @@ https://www.bing.com/ck/a?!&&p=f4df424bcf146ddfJmltdHM9MTY2Nzg2NTYwMCZpZ3VpZD0wZ
 
 
 
-import time
+	import time
 
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-
-chrome_web_driver = Service("C:\Chrome Driver\chromedriver.exe")  #Enter the absolute path to the directory where the Chrome driver is located
-driver = webdriver.Chrome(service=chrome_web_driver)
-wait = WebDriverWait(driver, 300)
-driver.get("https://twitter.com/i/flow/login")
-driver.set_window_position(0, 0)
-driver.set_window_size(1280, 900)   #Set the screen size of the Chrome browser
-number = 1
-
--> email
-email = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input')))
-email.clear()
-email.send_keys("")   #Enter the email between double quotes
+	from selenium import webdriver
+	from selenium.webdriver.chrome.service import Service
+	from selenium.webdriver.common.by import By
+	from selenium.webdriver.support.ui import WebDriverWait
+	from selenium.webdriver.support import expected_conditions as EC
 
 
+	chrome_web_driver = Service("C:\Chrome Driver\chromedriver.exe")  #Enter the absolute path to the directory where the Chrome driver is located
+	driver = webdriver.Chrome(service=chrome_web_driver)
+	wait = WebDriverWait(driver, 300)
+	driver.get("https://twitter.com/i/flow/login")
+	driver.set_window_position(0, 0)
+	driver.set_window_size(1280, 900)   #Set the screen size of the Chrome browser
+	number = 1
 
-
--> next_button
-next_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div')))
-next_button.click()
-
-
--> password
-password = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input')))
-password.clear()
-password.send_keys("")  -> Enter the password between double quotes
-
-
--> login
-login_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div')))
-login_button.click()
-
-
-while number < 51:
-	-> new_tweet
-	new_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div')))
-	time.sleep(8)
-	driver.execute_script("arguments[0].click();", new_tweet)
-
-
-	with open(f"C:/Users/FRD/Desktop/file/{number}.txt", mode="r", encoding="utf-8") as file:
-		tweet_text = file.read()
-
-
-	-> tweet_text_input
-	tweet_text_input = wait.until(EC.element_to_be_clickable((By.XPATH, '//*                                          [@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div')))
-	tweet_text_input.clear()
-	tweet_text_input.send_keys(f"{tweet_text}")
-	tweet_text_input.send_keys("\n")
-	tweet_text_input.send_keys("")  -> Enter the hashtag you want
-
-	time.sleep(10)
-	print(number)
-	number += 1
+	-> email
+	email = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input')))
+	email.clear()
+	email.send_keys("")   #Enter the email between double quotes
 
 
 
-	-> submit_tweet
-	submit_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]')))
-	time.sleep(8)
-	driver.execute_script("arguments[0].click();", submit_tweet)
+
+	-> next_button
+	next_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div')))
+	next_button.click()
+
+
+	-> password
+	password = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input')))
+	password.clear()
+	password.send_keys("")  -> Enter the password between double quotes
+
+
+	-> login
+	login_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div')))
+	login_button.click()
+
+
+	while number < 51:
+		-> new_tweet
+		new_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div')))
+		time.sleep(8)
+		driver.execute_script("arguments[0].click();", new_tweet)
+
+
+		with open(f"C:/Users/FRD/Desktop/file/{number}.txt", mode="r", encoding="utf-8") as file:
+			tweet_text = file.read()
+
+
+		-> tweet_text_input
+		tweet_text_input = wait.until(EC.element_to_be_clickable((By.XPATH, '//*                                          [@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div')))
+		tweet_text_input.clear()
+		tweet_text_input.send_keys(f"{tweet_text}")
+		tweet_text_input.send_keys("\n")
+		tweet_text_input.send_keys("")  -> Enter the hashtag you want
+
+		time.sleep(10)
+		print(number)
+		number += 1
+
+
+
+		-> submit_tweet
+		submit_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[4]')))
+		time.sleep(8)
+		driver.execute_script("arguments[0].click();", submit_tweet)
 
 
 
