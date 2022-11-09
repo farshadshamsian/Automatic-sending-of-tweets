@@ -65,9 +65,9 @@ https://www.bing.com/ck/a?!&&p=f4df424bcf146ddfJmltdHM9MTY2Nzg2NTYwMCZpZ3VpZD0wZ
 		new_tweet = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="react-root"]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div')))
 		time.sleep(8)
 		driver.execute_script("arguments[0].click();", new_tweet)
-
-
-		with open(f"C:/Users/FRD/Desktop/file/{number}.txt", mode="r", encoding="utf-8") as file:
+		
+		-> You can send as many tweets as you want, you can create a TXT file and put the text of your tweets in them, also start from 1 and then 2...
+		with open(f"{number}.txt", mode="r", encoding="utf-8") as file: -> Enter the absolute path to the directory
 			tweet_text = file.read()
 
 
