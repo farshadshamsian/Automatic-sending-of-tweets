@@ -9,8 +9,8 @@ With the python code that I put, you can easily send your tweets to several diff
 1- First of all, install the pycharm software, which is a very famous Python IDE, and then install the Selenium Web Driver package.
 
 
-2- And then download the latest version of Chrome Driver similar to your Chrome version from the link below and put it in a folder preferably in Driver C
 
+2- And then download the latest version of Chrome Driver similar to your Chrome version from the link below and put it in a folder preferably in Driver C
 https://chromedriver.chromium.org/downloads
 
 
